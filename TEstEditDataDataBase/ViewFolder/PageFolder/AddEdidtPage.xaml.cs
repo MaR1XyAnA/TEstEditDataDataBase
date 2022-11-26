@@ -22,6 +22,7 @@ namespace TEstEditDataDataBase.ViewFolder.PageFolder
 {
     public partial class AddEdidtPage : Page
     {
+        int Id12 = 0;
         public AddEdidtPage(WorkerTable workerTable)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace TEstEditDataDataBase.ViewFolder.PageFolder
             {
                 workerTable = workerTable;
                 DataContext = workerTable;
+                Id12 = workerTable.IdWorker;
             }
         }
 
@@ -43,22 +45,24 @@ namespace TEstEditDataDataBase.ViewFolder.PageFolder
             {
                 var workerTable = new WorkerTable()
                 {
+                    IdWorker = Id12,
                     SurnameWorker = SurnameTextBox.Text,
                     NameWorker = nameTextBox.Text,
                     MiddlenameWorker = MiddlenameTextBox.Text
                 };
-                int Id = Convert.ToInt32(IdWorkerTextBlock.Text);
-                var rrr = AppConnectClass.DataDase.WorkerTable.Find(Id);
+                WorkerTable SeartheID = AppConnectClass.DataDase.WorkerTable.Find(Id12);
                 try
                 {
-                    if (rrr != null)
+                    if (SeartheID != null)
                     {
-                        AppConnectClass.DataDase.WorkerTable.AddOrUpdate(a => a.IdWorker, workerTable);
+                        AppConnectClass.DataDase.WorkerTable.AddOrUpdate(workerTable);
                     }
-                    
-
+                    else
+                    {
+                        AppConnectClass.DataDase.WorkerTable.Add(workerTable);
+                    }
                     AppConnectClass.DataDase.SaveChanges();
-                    MessageBox.Show("Сохранено\n" + rrr);
+                    MessageBox.Show("Сохранено\n");
                 }
                 catch (Exception ex)
                 {

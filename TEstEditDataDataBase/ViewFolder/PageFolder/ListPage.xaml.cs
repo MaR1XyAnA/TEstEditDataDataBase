@@ -28,8 +28,8 @@ namespace TEstEditDataDataBase.ViewFolder.PageFolder
 
         private void ListWorkwrListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var EdditWorker = ListWorkwrListBox.SelectedItem as WorkerTable;
-            FrameClass.BodyFrame.Navigate(new AddEdidtPage(EdditWorker));
+            WorkerTable workerTable = (WorkerTable)ListWorkwrListBox.SelectedItem;
+            FrameClass.BodyFrame.Navigate(new AddEdidtPage(workerTable));
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Проекты Vsual Studio\TEstEditDataDataBase\TEstEditDataDataBase\AppDataFolder\DataBaseModel.edmx" включено. 
+﻿// Создание кода T4 для модели "D:\Проекты C#\РЕПОЗИТОРИИ\MaR1XyAnA\TEstEditDataDataBase\TEstEditDataDataBase\AppDataFolder\DataBaseModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.
